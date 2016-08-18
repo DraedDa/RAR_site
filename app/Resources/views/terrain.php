@@ -1,18 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="fr">
-<head>
-  <meta http-equiv="Content-Language" content="fr" />
-  <meta name="Copyright" content="v.sypowski" />
-  <meta name="Author" content="v.sypowski" />
-  <meta protected_copyright="true">
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <link href="{{ asset('bundles/framework/css/bootstrap.css') }}" rel="stylesheet" />
-  <link href="{{ asset('bundles/framework/css/styles.css') }}" rel="stylesheet" />
-  <script type="text/javascript" src="{{ asset('bundles/framework/js/jquery-3.10.min.js') }}"></script>
-  <script src="{{ asset('bundles/framework/js/bootstrap.min.js') }}"></script>
-  </head>
-</body>
+{% extends 'base.html.twig' %}
+{% block body %}
 	<div id="content">
 	<!--modal Terrain1 -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -36,6 +23,4 @@
 	  		 <div id="backterrain3" class="terrain" onclick="terrain3()" class="col-md-12"><div id="terrain">Terrain3</div></div>	  		
 	  	</div>
 	</div>  
-</body>
-	
-</html>
+{% endblock %}

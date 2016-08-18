@@ -10,7 +10,8 @@
   <title>RAR</title>
   <link href="{{ asset('bundles/framework/css/bootstrap.css') }}" rel="stylesheet" />
   <link href="{{ asset('bundles/framework/css/styles.css') }}" rel="stylesheet" />
-  <script src="jquery/jquery.js"></script>
+  <script type="text/javascript" src="{{ asset('bundles/framework/js/jquery-3.10.min.js') }}"></script>
+  <script src="{{ asset('bundles/framework/js/bootstrap.min.js') }}"></script>
 </head>
 </body>
 	<div id="menu">

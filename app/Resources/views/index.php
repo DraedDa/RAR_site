@@ -1,32 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="fr">
-<head>
-  <?php include('navigation.html') ?>
-  <meta http-equiv="Content-Language" content="fr" />
-  <meta name="Copyright" content="v.sypowski" />
-  <meta name="Author" content="v.sypowski" />
-  <meta protected_copyright="true">
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <title>RAR</title>
-  <link href="{{ asset('bundles/framework/css/bootstrap.css') }}" rel="stylesheet" />
-  <link href="{{ asset('bundles/framework/css/styles.css') }}" rel="stylesheet" />
-  <script type="text/javascript">
-  $(document).ready(function(){	
-		var onright=1;
-		$("#title").click(function() {
-    	onright=parseInt(onright)+parseInt(1);
-		if (onright%2==0) {
-	  		$("#hided").fadeIn();
-		}
- 		else {
-			$("#hided").fadeOut();
-		}
-	});
-  }); 
-  </script>
-  </head>
-</body>
+{% extends 'base.html.twig' %}
+{% block body %}
 	<div id="content">
 	<div id="title"><center><h3>Prochaine Partie</h3></center>
 	</div>
@@ -68,5 +41,4 @@
 	</div>
 	
 	</div> 
-</body>
-</html>
+{% endblock %}

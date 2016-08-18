@@ -1,18 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="fr">
-<head>
-  <meta http-equiv="Content-Language" content="fr" />
-  <meta name="Copyright" content="v.sypowski" />
-  <meta name="Author" content="v.sypowski" />
-  <meta protected_copyright="true">
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <link href="{{ asset('bundles/framework/css/bootstrap.css') }}" rel="stylesheet" />
-  <link href="{{ asset('bundles/framework/css/styles.css') }}" rel="stylesheet" />
-  <script src="jquery.js"></script>
-  <script language="JavaScript" type="text/javascript" src="javascript.js"></script>
-  </head>
-</body>
+{% extends 'base.html.twig' %}
+{% block body %}
 	<div id="content">
 	<hr width="100%"></hr>	
 	<div id="index"><h1><u><div id="titleIndex">Index</div></u></h1>
@@ -131,5 +118,4 @@ Les règles qui suivent sont un simple rappel de la législation et du bon sens 
 	<li>Durant la journée de jeu, il est interdit de laisser des déchets sur le site. L’association R.A.R mettra à la disposition des joueurs une poubelle, afin d’éviter toute pollutions.</li>
 </ul>	
 </div> 
-</body>	
-</html>
+{% endblock %}

@@ -1,0 +1,3 @@
+160817 11:05:44 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160817 11:05:44 mysqld_safe Starting mysqld daemon with databases from /Applications/MAMP/db/mysql
+160817 16:36:12 mysqld_safe mysqld from pid file /Applications/MAMP/tmp/mysql/mysql.pid ended
