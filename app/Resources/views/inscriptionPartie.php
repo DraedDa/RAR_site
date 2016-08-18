@@ -1,3 +1,4 @@
+{% trans_default_domain 'FOSUserBundle' %}
 {% extends 'base.html.twig' %}
 {% block body %}
 <div id="content">
@@ -9,32 +10,30 @@
                 	<option>test
                 	<OPTION VALUE="sessionScope.sessionUilisateur.listPartie[1]);">
                 </select>
-                <span class="erreur">${form.erreurs['parties']}</span>
 
                 <label for="username">username<span class="requis">*</span></label>
-                <input type="text" id="username" name="username" value="${sessionScope.sessionUtilisateur.username}" onclick="this.value ='';" size="20" maxlength="60" disabled />
-                <span class="erreur">${form.erreurs['username']}</span>
+                <input type="hidden" id="username" name="username" value="{{ user.username }}"/>
+                {{ user.username }}  <br><br>           
                 
                 <label for="nom">Nom <span class="requis">*</span></label>
-                <input type="text" id="nom" name="nom" value="<c:out value="${sessionScope.sessionUtilisateur.nom}"/>" onclick="this.value = '';" size="20" maxlength="20" disabled />
-                <span class="erreur">${form.erreurs['nom']}</span>
+                <input type="text" id="nom" name="nom" value="${sessionScope.sessionUtilisateur.nom}"/>
                 
                 <label for="prenom">Prénom<span class="requis">*</span></label>
-                <input type="text" id="prenom" name="prenom" value="<c:out value="${sessionScope.sessionUtilisateur.prenom}"/>" onclick="this.value = '';" size="20" maxlength="20" disabled />
-                <span class="erreur">${form.erreurs['prenom']}</span>
+                <input type="text" id="prenom" name="prenom" value="${sessionScope.sessionUtilisateur.prenom}"/>
+
                 
                 <label for="mail">Adresse mail<span class="requis">*</span></label>
-                <input type="text" id="mail" name="mail" value="<c:out value="${sessionScope.sessionUtilisateur.email}"/>" onclick="this.value = '';" size="20" maxlength="20" disabled />
-                <span class="erreur">${form.erreurs['mail']}</span>
-                
+                <input type="hidden" id="email" name="email" value="{{ user.email }}"/>
+                {{ user.email }} <br><br>
+
                 <label for="phone">Numéros de téléphone <span class="requis">*</span></label>
-                <input type="text" id="phone" name="phone" value="<c:out value="${sessionScope.sessionUtilisateur.phone}"/>" onclick="this.value = '';" size="20" maxlength="20" disabled />
-                <span class="erreur">${form.erreurs['phone']}</span>
+                <input type="text" id="phone" name="phone" value="${sessionScope.sessionUtilisateur.phone}"/>
+
                 
                 <label for="payement">Payement<span class="requis">*</span></label>
                 <input type="radio" id="payement" name="payement" value="paypal" size="20" maxlength="60" />paypal (CB)
                 <input type="radio" id="payement" name="payement" value="cash"size="20" maxlength="60" />Sur place (cash)
-                <span class="erreur">${form.erreurs['payement']}</span>			
+		
 				</br>
                 <input type="submit" value="S'inscrire à la partie" class="sansLabel" id="retour"/>	
                 

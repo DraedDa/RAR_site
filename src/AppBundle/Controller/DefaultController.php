@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
@@ -70,9 +71,11 @@ class DefaultController extends Controller
      */
     public function inscriptionPartieAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $user = $this->getUser();
+
         return $this->render('inscriptionPartie.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+            'user' => $user,
         ]);
     }
 
