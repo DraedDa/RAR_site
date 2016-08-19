@@ -47,11 +47,12 @@ class DefaultController extends Controller
     /**
      * @Route("/terrain", name="terrain")
      */
-    public function terrainxAction(Request $request)
+    public function terrainAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $terrain = $this->getTerrain();
         return $this->render('terrain.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+            'terrain' => $terrain,
         ]);
     }
 

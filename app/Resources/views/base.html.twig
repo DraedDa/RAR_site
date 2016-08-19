@@ -40,9 +40,11 @@
         {% endif %}
 			 <li><a href="{{ path('contact') }}">Contact</a></li>
 			 <li><a href="{{ path('regles') }}">Nos règles</a></li>
-			 <!-- <li><a href="{{ path('historiquePartie') }}">Historique parties	</a></li> -->
+             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			 <li><a href="{{ path('historiquePartie') }}">Historique parties</a></li>
 			 <li><a href="{{ path('agenda') }}">Agenda</a></li>
 			 <li><a href="{{ path('inscriptionPartie') }}">Inscription Parties</a></li>
+             {% endif %}
 			 <li><a href="{{ path('terrain') }}">Terrain</a></li>
 			 <li><a href="{{ path('index') }}">Accueil</a></li>
 		</ul>
