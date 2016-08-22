@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Bundle\FrameworkBundle\Entity\Terrain;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class DefaultController extends Controller
 {
@@ -64,21 +66,26 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/showDetailTerrain/{id}", name="showDetailTerrain")
+     * @Route("/showDetailTerrain/{titre}", name="showDetailTerrain")
      */
-    public function showDetailTerrainAction($id, Request $request)
+    public function showDetailTerrainAction($titre, Request $request)
     {
         $repository = $this
         ->getDoctrine()
         ->getManager()
         ->getRepository('FrameworkBundle:Terrain');
 
-        $Terrain = $repository->find($id);
-
-        return $this->render('showDetailTerrain.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-            'Terrain' => $Terrain,
-        ]);
+        $Terrain = $repository->findOneByTitre($titre);
+        
+        if ($Terrain == null) {
+            throw new NotFoundHttpException("terrain non trouvé");
+        }
+        else {
+            return $this->render('showDetailTerrain.html.twig', [
+                'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+                'Terrain' => $Terrain,
+            ]);
+        }
     }
 
     /**
