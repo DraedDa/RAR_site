@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div id="content">
+			<h3>{{ Terrain.titre }}</h3><br>
+			<h4>Description : </h4> {{ Terrain.description }}<br><br>	
+			<h4>Taille : </h4> {{ Terrain.taille }}<br><br>	
+			<h4>Type : </h4>{{ Terrain.type }}<br><br>	
+			<h4>Addresse :</h4>	{{ Terrain.adresse }}<br><br>	
+			<h4>Coordonnées : </h4> {{ Terrain.geolocalisation }}<br><br>	
+    </div>
+{% endblock %}

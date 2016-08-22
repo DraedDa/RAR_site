@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Bundle\FrameworkBundle\Entity\Terrain;
 
 class DefaultController extends Controller
 {
@@ -49,10 +50,34 @@ class DefaultController extends Controller
      */
     public function terrainAction(Request $request)
     {
-        $terrain = $this->getTerrain();
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('FrameworkBundle:Terrain');
+
+        $listTerrain = $repository->findAll();
+
         return $this->render('terrain.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-            'terrain' => $terrain,
+            'listTerrain' => $listTerrain,
+        ]);
+    }
+
+    /**
+     * @Route("/showDetailTerrain/{id}", name="showDetailTerrain")
+     */
+    public function showDetailTerrainAction($id, Request $request)
+    {
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('FrameworkBundle:Terrain');
+
+        $Terrain = $repository->find($id);
+
+        return $this->render('showDetailTerrain.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+            'Terrain' => $Terrain,
         ]);
     }
 
