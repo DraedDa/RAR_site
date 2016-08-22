@@ -30,3 +30,5 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/inscriptionPartie, role: ROLE_USER }
         - { path: ^/agenda, role: ROLE_USER }
+        - { path: ^/profil, role: ROLE_USER }
+        - { path: ^/historiquePartie, role: ROLE_USER }

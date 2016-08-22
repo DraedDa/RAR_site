@@ -4,12 +4,7 @@
 <div id="content">
         <form id="connexion" method="post" action="inscriptionPartie">
             <fieldset>
-                <legend>inscription partie</legend>     
-                <label for="parties">Partie disponibles<span class="requis">*</span></label>                
-                <select>
-                	<option>test
-                	<OPTION VALUE="sessionScope.sessionUilisateur.listPartie[1]);">
-                </select>
+                <legend>inscription pour partie {{ Partie.partieName }}</legend>                    
 
                 <label for="username">username<span class="requis">*</span></label>
                 <input type="hidden" id="username" name="username" value="{{ user.username }}"/>

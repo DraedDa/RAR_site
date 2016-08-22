@@ -12,20 +12,6 @@
   <link href="{{ asset('bundles/framework/css/styles.css') }}" rel="stylesheet" />
   <script type="text/javascript" src="{{ asset('bundles/framework/js/jquery-3.10.min.js') }}"></script>
   <script src="{{ asset('bundles/framework/js/bootstrap.min.js') }}"></script>
-  <script>
-  $(document).ready(function(){	
-		var onright=1;
-		$("#title").click(function() {
-    	onright=parseInt(onright)+parseInt(1);
-		if (onright%2==0) {
-	  		$("#hided").fadeIn();
-		}
- 		else {
-			$("#hided").fadeOut();
-		}
-	});
-  }); 
-  </script>
     </head>
     <body>
     <div id="menu">
@@ -36,15 +22,14 @@
         {% else %}
             <li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
             <li><a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
-            
         {% endif %}
 			 <li><a href="{{ path('contact') }}">Contact</a></li>
 			 <li><a href="{{ path('regles') }}">Nos règles</a></li>
-             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 			 <li><a href="{{ path('historiquePartie') }}">Historique parties</a></li>
 			 <li><a href="{{ path('agenda') }}">Agenda</a></li>
-			 <li><a href="{{ path('inscriptionPartie') }}">Inscription Parties</a></li>
-             {% endif %}
+			 <li><a href="{{ path('inscriptionPartieIndex') }}">Inscription Parties</a></li>
+        {% endif %}
 			 <li><a href="{{ path('terrain') }}">Terrain</a></li>
 			 <li><a href="{{ path('index') }}">Accueil</a></li>
 		</ul>

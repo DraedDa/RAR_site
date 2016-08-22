@@ -19,7 +19,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('index.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
@@ -30,7 +30,7 @@ class DefaultController extends Controller
      */
     public function contactAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('contact.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
@@ -41,7 +41,7 @@ class DefaultController extends Controller
      */
     public function reglesAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('regles.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
@@ -93,10 +93,34 @@ class DefaultController extends Controller
      */
     public function agendaAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('agenda.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
+    }
+
+
+
+    /**
+     * @Route("inscriptionPartieIndex", name="inscriptionPartieIndex")
+     */
+    public function inscriptionPartieIndexAction(Request $request)
+    {
+
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:Partie');
+
+        $Parties = $repository->findByetatPartie("actif");
+
+
+        return $this->render('inscriptionPartieIndex.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+            'Parties'=> $Parties,
+        ]);
+
+        
     }
 
     /**
@@ -104,20 +128,31 @@ class DefaultController extends Controller
      */
     public function inscriptionPartieAction(Request $request)
     {
+
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:Partie');
+
+        $partieName = $request->query->get('partieName');
+        $partie = $repository->findOneBypartieName($partieName);
         $user = $this->getUser();
 
         return $this->render('inscriptionPartie.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
             'user' => $user,
+            'Partie' => $partie,
+
         ]);
+
     }
 
-        /**
+    /**
      * @Route("/historiquePartie", name="historiquePartie")
      */
     public function historiquePartieAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('historiquePartie.php', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);

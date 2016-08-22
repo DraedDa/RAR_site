@@ -88,4 +88,4 @@ encarts de la page :
                 =ajouter=
                 =========
 </div>
-    {% endblock %}
+{% endblock %}
