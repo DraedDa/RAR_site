@@ -6,7 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Symfony\Bundle\FrameworkBundle\Entity\Terrain;
+
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
@@ -55,7 +55,7 @@ class DefaultController extends Controller
         $repository = $this
         ->getDoctrine()
         ->getManager()
-        ->getRepository('FrameworkBundle:Terrain');
+        ->getRepository('AppBundle:Terrain');
 
         $listTerrain = $repository->findAll();
 
@@ -73,7 +73,7 @@ class DefaultController extends Controller
         $repository = $this
         ->getDoctrine()
         ->getManager()
-        ->getRepository('FrameworkBundle:Terrain');
+        ->getRepository('AppBundle:Terrain');
 
         $Terrain = $repository->findOneByTitre($titre);
         

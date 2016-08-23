@@ -5,7 +5,7 @@
         <form method="get" action="inscriptionPartie">
             <fieldset>
                 <legend>Inscription Partie</legend>     
-                <label for="parties">Parties disponibles<span class="requis">*</span></label>
+                <label for="parties">Parties disponibles : </label>
                 <select name="partieName">
                     {% for Partie in Parties %}
                         <option value="{{ Partie.partieName }}">{{ Partie.partieName }}

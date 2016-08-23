@@ -4,17 +4,19 @@
 <div id="content">
         <form id="connexion" method="post" action="inscriptionPartie">
             <fieldset>
-                <legend>inscription pour partie {{ Partie.partieName }}</legend>                    
+                <legend>inscription pour {{ Partie.partieName }}</legend>                    
 
                 <label for="username">username<span class="requis">*</span></label>
                 <input type="hidden" id="username" name="username" value="{{ user.username }}"/>
                 {{ user.username }}  <br><br>           
                 
                 <label for="nom">Nom <span class="requis">*</span></label>
-                <input type="text" id="nom" name="nom" value="${sessionScope.sessionUtilisateur.nom}"/>
+                <input type="hidden" id="nom" name="nom" value="{{ user.nom }}"/>
+                {{ user.nom }}  <br><br> 
                 
                 <label for="prenom">Prénom<span class="requis">*</span></label>
-                <input type="text" id="prenom" name="prenom" value="${sessionScope.sessionUtilisateur.prenom}"/>
+                 <input type="hidden" id="prenom" name="prenom" value="{{ user.prenom }}"/>
+                {{ user.prenom }}  <br><br> 
 
                 
                 <label for="mail">Adresse mail<span class="requis">*</span></label>
@@ -22,7 +24,8 @@
                 {{ user.email }} <br><br>
 
                 <label for="phone">Numéros de téléphone <span class="requis">*</span></label>
-                <input type="text" id="phone" name="phone" value="${sessionScope.sessionUtilisateur.phone}"/>
+                 <input type="hidden" id="phone" name="phone" value="{{ user.phone }}"/>
+                {{ user.phone }}  <br><br> 
 
                 
                 <label for="payement">Payement<span class="requis">*</span></label>

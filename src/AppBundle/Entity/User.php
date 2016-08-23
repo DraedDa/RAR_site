@@ -17,11 +17,76 @@ class User extends BaseUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+     protected $id;
+
+    // /**
+    // * @ORM\nom
+    // * @var string
+    // *
+    // * @ORM\Column(name="nom", type="string", length=80)
+    // */
+    //  private $nom;
+   
+    // /**
+    // * @ORM\prenom
+    // * @var string
+    // *
+    // * @ORM\Column(name="prenom", type="string", length=80)
+    // */
+    //  private $prenom;
+
+    // /**
+    // * @ORM\phone
+    // * @var string
+    // *
+    // * @ORM\Column(name="phone", type="string", length=80)
+    // */
+    //  private $phone;
 
     public function __construct()
     {
         parent::__construct();
         
+    }
+
+    
+    
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     * @return User
+     */
+    public function setPrenom($prenom)
+    {
+        $this->setPrenom = $prenom;
+
+        return $this;
+    }
+    
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return User
+     */
+    public function setNom($Nom)
+    {
+        $this->setNom = $Nom;
+
+        return $this;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return User
+     */
+    public function setPhone($phone)
+    {
+        $this->setphone = $phone;
+
+        return $this;
     }
 }
