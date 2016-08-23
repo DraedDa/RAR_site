@@ -23,7 +23,7 @@
                 <input type="hidden" id="email" name="email" value="{{ user.email }}"/>
                 {{ user.email }} <br><br>
 
-                <label for="phone">Numéros de téléphone <span class="requis">*</span></label>
+                <label for="phone">Numéro de téléphone <span class="requis">*</span></label>
                  <input type="hidden" id="phone" name="phone" value="{{ user.phone }}"/>
                 {{ user.phone }}  <br><br> 
 
