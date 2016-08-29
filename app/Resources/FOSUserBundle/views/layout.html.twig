@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <meta http-equiv="Content-Language" content="fr" />
+  <meta name="Copyright" content="v.sypowski" />
+  <meta name="Author" content="v.sypowski" />
+  <meta protected_copyright="true">
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title>RAR</title>
+  <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" />
+  <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
+  <script type="text/javascript" src="{{ asset('/js/jquery-3.10.min.js') }}"></script>
+  <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    </head>
+    <body>
+    <div id="menu">
+		<ul>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+        <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>         
+        {% else %}
+            <li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+            <li><a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
+        {% endif %}
+			 <li><a href="{{ path('contact') }}">Contact</a></li>
+			 <li><a href="{{ path('regles') }}">Nos règles</a></li>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			 <li><a href="{{ path('historiquePartie') }}">Historique parties</a></li>
+			 <li><a href="{{ path('agenda') }}">Agenda</a></li>
+			 <li><a href="{{ path('inscriptionPartieIndex') }}">Inscription Parties</a></li>
+        {% endif %}
+			 <li><a href="{{ path('terrain') }}">Terrain</a></li>
+			 <li><a href="{{ path('index') }}">Accueil</a></li>
+		</ul>
+
+
+	</div>
+    <div id="content">
+        {% block fos_user_content %}
+            
+            
+        {% endblock fos_user_content %}
+    </div>
+    </body>
+</html>
