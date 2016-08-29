@@ -7,3 +7,14 @@
 160819 15:50:03 mysqld_safe Starting mysqld daemon with databases from /Applications/MAMP/db/mysql
 160822 09:36:31 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
 160822 09:36:31 mysqld_safe Starting mysqld daemon with databases from /Applications/MAMP/db/mysql
+160828 23:04:04 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160828 23:04:04 mysqld_safe Starting mysqld daemon with databases from /Applications/MAMP/db/mysql
+nohup: /Applications/safari: No such file or directory
+160828 23:06:21 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160828 23:06:21 mysqld_safe A mysqld process already exists
+160828 23:06:37 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160828 23:06:37 mysqld_safe A mysqld process already exists
+160828 23:07:17 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160828 23:07:17 mysqld_safe A mysqld process already exists
+160829 08:54:16 mysqld_safe Logging to '/Applications/MAMP/logs/mysql_error_log.err'.
+160829 08:54:16 mysqld_safe A mysqld process already exists
