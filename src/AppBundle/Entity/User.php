@@ -25,7 +25,7 @@ class User extends BaseUser
     // *
     // * @ORM\Column(name="nom", type="string", length=80)
     // */
-    //  private $nom;
+    //  protected $nom;
    
     // /**
     // * @ORM\prenom
@@ -33,7 +33,7 @@ class User extends BaseUser
     // *
     // * @ORM\Column(name="prenom", type="string", length=80)
     // */
-    //  private $prenom;
+    //  protected $prenom;
 
     // /**
     // * @ORM\phone
@@ -41,7 +41,7 @@ class User extends BaseUser
     // *
     // * @ORM\Column(name="phone", type="string", length=80)
     // */
-    //  private $phone;
+    //  protected $phone;
 
     public function __construct()
     {
