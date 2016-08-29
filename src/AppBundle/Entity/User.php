@@ -19,74 +19,99 @@ class User extends BaseUser
      */
      protected $id;
 
-    // /**
-    // * @ORM\nom
-    // * @var string
-    // *
-    // * @ORM\Column(name="nom", type="string", length=80)
-    // */
-    //  protected $nom;
+    /**
+    * @var string
+    *@ORM\Column(name="nom", type="string", length=80)
+    */
+     protected $nom;
    
-    // /**
-    // * @ORM\prenom
-    // * @var string
-    // *
-    // * @ORM\Column(name="prenom", type="string", length=80)
-    // */
-    //  protected $prenom;
+    /**
+    * @var string
+    *@ORM\Column(name="prenom", type="string", length=80)
+    */
+     protected $prenom;
 
-    // /**
-    // * @ORM\phone
-    // * @var string
-    // *
-    // * @ORM\Column(name="phone", type="string", length=80)
-    // */
-    //  protected $phone;
+    /**
+    * @var string
+    *@ORM\Column(name="phone", type="string", length=80)
+    */
+     protected $phone;
 
     public function __construct()
     {
         parent::__construct();
-        
+
     }
 
-    
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return User
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
     
     /**
      * Set prenom
      *
      * @param string $prenom
+     *
      * @return User
      */
-    public function setPrenom($prenom)
+    public function setPrenom($prnom)
     {
-        $this->setPrenom = $prenom;
+        $this->prenom = $prenom;
 
         return $this;
     }
-    
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     * @return User
-     */
-    public function setNom($Nom)
-    {
-        $this->setNom = $Nom;
 
-        return $this;
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
     }
 
     /**
      * Set phone
      *
      * @param string $phone
+     *
      * @return User
      */
-    public function setPhone($phone)
+    public function setphone($phone)
     {
-        $this->setphone = $phone;
+        $this->phone = $phone;
 
         return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getphone()
+    {
+        return $this->phone;
     }
 }
