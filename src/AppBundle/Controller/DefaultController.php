@@ -13,6 +13,43 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class DefaultController extends Controller
 {
 
+//admin
+    
+    /**
+     * @Route("/admin", name="indexAdmin")
+     */
+    public function indexAdminAction(Request $request)
+    {
+
+        return $this->render('/admin/admin.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+        ]);
+    }
+
+    /**
+     * @Route("/admin/partieIndex", name="partieIndex")
+     */
+    public function partieIndexAction(Request $request)
+    {
+
+        return $this->render('/admin/partieIndex.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+        ]);
+    }
+
+
+    /**
+     * @Route("/admin/inscriptionPartieIndex", name="adminInscriptionPartieIndex")
+     */
+    public function adminInscriptionPartieIndexAction(Request $request)
+    {
+
+        return $this->render('/admin/adminInscriptionPartieIndex.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+        ]);
+    }
+
+//normal user
 
     /**
      * @Route("/", name="index")
