@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Terrain list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Taille</th>
+                <th>Type</th>
+                <th>Adresse</th>
+                <th>Geolocalisation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for terrain in terrains %}
+            <tr>
+                <td><a href="{{ path('terrain_show', { 'id': terrain.id }) }}">{{ terrain.id }}</a></td>
+                <td>{{ terrain.titre }}</td>
+                <td>{{ terrain.description }}</td>
+                <td>{{ terrain.taille }}</td>
+                <td>{{ terrain.type }}</td>
+                <td>{{ terrain.adresse }}</td>
+                <td>{{ terrain.geolocalisation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('terrain_show', { 'id': terrain.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('terrain_edit', { 'id': terrain.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('terrain_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

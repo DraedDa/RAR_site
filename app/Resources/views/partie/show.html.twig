@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Partie</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ partie.id }}</td>
+            </tr>
+            <tr>
+                <th>Partiename</th>
+                <td>{{ partie.partieName }}</td>
+            </tr>
+            <tr>
+                <th>Terrain</th>
+                <td>{{ partie.terrain }}</td>
+            </tr>
+            <tr>
+                <th>Lienimage</th>
+                <td>{{ partie.lienImage }}</td>
+            </tr>
+            <tr>
+                <th>Etatpartie</th>
+                <td>{{ partie.etatPartie }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ partie.description }}</td>
+            </tr>
+            <tr>
+                <th>Nombrejoueurmax</th>
+                <td>{{ partie.nombreJoueurMax }}</td>
+            </tr>
+            <tr>
+                <th>Nombrejoueurinscrit</th>
+                <td>{{ partie.nombreJoueurInscrit }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ partie.prix }}</td>
+            </tr>
+            <tr>
+                <th>Datepartie</th>
+                <td>{% if partie.datePartie %}{{ partie.datePartie|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('partie_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('partie_edit', { 'id': partie.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

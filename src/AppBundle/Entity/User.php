@@ -21,19 +21,19 @@ class User extends BaseUser
 
     /**
     * @var string
-    *@ORM\Column(name="nom", type="string", length=80)
+    *@ORM\Column(name="nom", type="string", nullable=true, length=80)
     */
      protected $nom;
    
     /**
     * @var string
-    *@ORM\Column(name="prenom", type="string", length=80)
+    *@ORM\Column(name="prenom", type="string", nullable=true, length=80)
     */
      protected $prenom;
 
     /**
     * @var string
-    *@ORM\Column(name="phone", type="string", length=80)
+    *@ORM\Column(name="phone", type="string", nullable=true, length=80)
     */
      protected $phone;
 

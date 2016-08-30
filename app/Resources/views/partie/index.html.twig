@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Partie list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Partiename</th>
+                <th>Terrain</th>
+                <th>Lienimage</th>
+                <th>Etatpartie</th>
+                <th>Description</th>
+                <th>Nombrejoueurmax</th>
+                <th>Nombrejoueurinscrit</th>
+                <th>Prix</th>
+                <th>Datepartie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partie in parties %}
+            <tr>
+                <td><a href="{{ path('partie_show', { 'id': partie.id }) }}">{{ partie.id }}</a></td>
+                <td>{{ partie.partieName }}</td>
+                <td>{{ partie.terrain }}</td>
+                <td>{{ partie.lienImage }}</td>
+                <td>{{ partie.etatPartie }}</td>
+                <td>{{ partie.description }}</td>
+                <td>{{ partie.nombreJoueurMax }}</td>
+                <td>{{ partie.nombreJoueurInscrit }}</td>
+                <td>{{ partie.prix }}</td>
+                <td>{% if partie.datePartie %}{{ partie.datePartie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('partie_show', { 'id': partie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('partie_edit', { 'id': partie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('partie_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
